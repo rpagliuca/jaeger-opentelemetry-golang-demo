@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  jaeger:
+    image: jaegertracing/all-in-one
+    ports:
+    - 16686:16686 # Frontend application available at http://localhost:16686
+  app1:
+    build:
+      context: ./app1
+    ports:
+    - 8001:8080
+  app2:
+    build:
+      context: ./app2
+    ports:
+    - 8002:8080
